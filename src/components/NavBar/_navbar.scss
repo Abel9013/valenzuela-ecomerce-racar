@@ -1,0 +1,66 @@
+@use '../../scss/base/variables' as v;
+@use '../../scss/base/mixins' as m;
+
+.header {
+    background-color: v.$primario;
+    color: white;
+    &__navegacion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.tablet { 
+            
+        }
+        // padding: 3rem;
+        @include m.tablet { 
+            flex-direction: row;
+            
+        }
+        // .carrito {
+        //     order: -1;
+        // }
+        a {
+            color: white;
+            padding: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+
+
+
+
+// .header__barra{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     align-items: center;
+    //     padding: 3rem;
+//     background-color: v.$color2;
+
+// }
+// .header__logo{
+// width: 5rem;
+// margin: 1rem;
+// }
+// .header__logo img:hover{
+//     transform: rotate(360deg);
+//     transition: 300ms ease-in-out;
+// }
+// .navegacion a {
+//     transition: 300ms;
+//     width: 100%;
+//     text-align: center;
+//     padding: 3rem;
+//     border-radius: .8rem;
+//     color: v.$blanco;
+// }
+// .navegacion__link:hover{
+//     // background-color: #552B88;
+//     background-color: v.$color3;
+//     color: #fff;
+// }
