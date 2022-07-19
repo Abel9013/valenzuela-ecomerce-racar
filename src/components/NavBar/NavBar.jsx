@@ -1,7 +1,7 @@
 import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
-    console.log('es este');
+    console.log('es es es este');
   return (
     <>
       <header className="header">
