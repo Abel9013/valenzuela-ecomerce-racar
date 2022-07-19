@@ -10,7 +10,6 @@ console.log(count);
   return (
     <div>
         <div>
-            <h3>Soy un contador</h3>
             <div>
                 {`cuentaProductos:  ${count}`}
                <button 
