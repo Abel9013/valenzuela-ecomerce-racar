@@ -8,12 +8,7 @@ const Item = ({id, name, img, description, stock, price, category}) => {
             <img src={img} alt="" />
         </div>
         <div className="card__body">
-            <h3>{name}</h3>
-            {/* <div className="card__cant">
-                <button className="card__btn">+</button>
-                <h4>stock:{stock}</h4>
-                <button className="card__btn">-</button>
-            </div> */}
+            <h3 className='card__name'>{name}</h3>
             <div className="card__buy">
                 <Link to={`/detail/${id}`} >
                 <button className="card__btn">Detalles del Producto</button>

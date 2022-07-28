@@ -8,6 +8,7 @@ const ItemDetail = ({prod}) => {
         </div>
         <div className="card__body">
             <h3>{prod.name}</h3>
+            <p>{prod.description}</p>
             <div className="card__cant">
                 <button className="card__btn">+</button>
                 <h4>stock:{prod.stock}</h4>
