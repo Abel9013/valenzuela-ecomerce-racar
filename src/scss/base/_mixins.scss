@@ -18,6 +18,11 @@
         @content;
     }
 }
+@mixin large {
+    @media (min-width: v.$large) {
+        @content;
+    }
+}
 
 @mixin boton($bgColor, $colorTexto) {
     background-color: $bgColor;

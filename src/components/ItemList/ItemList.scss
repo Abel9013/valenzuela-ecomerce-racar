@@ -1,11 +1,24 @@
 @use '../../scss/base/variables' as v;
 @use '../../scss/base/mixins' as m;
 .grid {
-    @include m.grid(4,1fr);
+    
+    @include m.tablet { 
+        @include m.grid(2,1fr);
+        
+    }
+    @include m.desktop { 
+        @include m.grid(3,1fr);
+        
+    }
+    @include m.large { 
+        @include m.grid(4,1fr);
+        
+    }
 }
 .main {
 
     padding-top: 2rem;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 
 }
