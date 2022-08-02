@@ -14,19 +14,17 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes >
-          <Route path='/count' element={<ItemCount stock={5} initial={1} />} />
+          
           <Route path='/' element={<ItemListContainer />} />        
-          {/* <Route path='/category/categoryId' element={<ItemListContainer />} />         */}
+          
           <Route index path='/category/:categoryId' element={<ItemListContainer />} />
-          <Route path='/card' element={<Card />} />
+          {/* <Route path='/card' element={<Card />} /> */}
           <Route path='/detail' element={<ItemDetail />} />
           <Route path='/detail/:id' element={<ItemDetailContainer />} />
 
           <Route path='*' element={ <Navigate to='/' /> } />
           
-          {/* <Card />
-          <ItemCount />
-          <ItemListContainer /> */} 
+
         </Routes>  
 
       </BrowserRouter>

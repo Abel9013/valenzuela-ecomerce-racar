@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({prod}) => {
+    const[toCart, setTocart] = useState(true);
+    const onAdd = (count)=>{
+        alert(`Usted agrego ${count} relojes`);
+    }
+
   return (
     <div className="card">
         <div className="card__imagen">
@@ -8,16 +14,15 @@ const ItemDetail = ({prod}) => {
         </div>
         <div className="card__body">
             <h3>{prod.name}</h3>
-            <p>{prod.description}</p>
-            <div className="card__cant">
-                <button className="card__btn">+</button>
-                <h4>stock:{prod.stock}</h4>
-                <button className="card__btn">-</button>
-            </div>
-            <div className="card__buy">
-                <button className="card__btn">Agregar al carrito</button>
-            </div>
+            <p>{prod.description}</p> 
         </div>
+        {
+            toCart ?
+            <ItemCount initial={1} stock={ prod.stock } onAdd={onAdd} />
+                    :
+            <button >Ir al home</button>
+        }
+
     </div>    
   )
 }

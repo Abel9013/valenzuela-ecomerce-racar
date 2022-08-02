@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { listArray } from '../helpers/listArray';
-import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
     const [prod, setProd] = useState({})
     const [loading, setLoading] = useState(false)
    const {id} = useParams()
     useEffect(()=>{
-        setLoading(true)
+        setLoading(true);
         listArray(id)
         .then((res) => {
             setProd(res)
