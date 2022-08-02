@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import AfterBuy from '../AfterBuy/AfterBuy';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({prod}) => {
-    const[toCart, setTocart] = useState(true);
+    const[toCart, setToCart] = useState(true);
     const onAdd = (count)=>{
-        alert(`Usted agrego ${count} relojes`);
+        // alert(`Usted agrego ${count} relojes`);
+        setToCart(false);
     }
 
   return (
@@ -20,7 +22,7 @@ const ItemDetail = ({prod}) => {
             toCart ?
             <ItemCount initial={1} stock={ prod.stock } onAdd={onAdd} />
                     :
-            <button >Ir al home</button>
+            <AfterBuy />
         }
 
     </div>    
