@@ -21,7 +21,7 @@ const ItemCount = ({stock,initial, onAdd}) => {
     }
 
   return (
-    <div className="card">
+    <div >
             <div className="card__body">
                     <div className="card__cant">
                             <button

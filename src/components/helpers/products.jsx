@@ -64,7 +64,7 @@ export const stock = [
     },
     {
       id: "8",
-      name: "Reloj Montreal Ml1226 ",
+      name: "Montreal Ml1226 ",
       img: "https://http2.mlstatic.com/D_NQ_NP_2X_752229-MLA48010112748_102021-F.webp",
       description: "Aro giratorio • Resistente al agua 30m • Fecha • BATERÍA DE OXIDO DE PLATA (RECICLABLE)",
       stock: 5,
