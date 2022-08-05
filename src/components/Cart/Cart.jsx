@@ -2,15 +2,17 @@ import React from 'react'
 import { useCartContext } from '../CartContext/CartContext'
 
 const Cart = () => {
-  const { cartList } =useCartContext();
+  const { cartList, emptyCart } =useCartContext();
   return (
+    <>
     <div>
-      <h2>Carrito</h2>http://127.0.0.1:5173/
+      <h2>Carrito</h2>
       <ul>
         {
-          cartList.map( item => (
+        cartList.map( item => (
             <div>
-              <li key={item.id} > <p>Elegiste:{item.quantity} {item.name}  Precio:{item.price}</p></li>
+            
+              <li  key={item.id}> <p>Elegiste:{item.quantity} {item.name}  Precio:{item.price}</p></li>
             </div>
 
           ))
@@ -18,6 +20,8 @@ const Cart = () => {
       </ul>
 
     </div>
+      <button onClick={emptyCart}>Vaciar carrito</button>
+    </>
   )
 }
 

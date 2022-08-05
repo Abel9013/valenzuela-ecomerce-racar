@@ -7,11 +7,11 @@ const ItemDetail = ({prod}) => {
     const{applyCart, cartList}= useCartContext()  ;
     const[toCart, setToCart] = useState(true);
     const onAdd = (count)=>{
-        console.log(`La cantidad es ${count}`);
+        // console.log(`La cantidad es ${count}`);
         applyCart({...prod, quantity: count});
         setToCart(false)
     }
-    console.log(cartList);
+    // console.log(cartList);
   return (
     <>
         <div className="card">
