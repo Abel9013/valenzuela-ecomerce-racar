@@ -18,6 +18,7 @@ const ItemCount = ({stock,initial, onAdd}) => {
     }
     const addToCart = ()=>{
         onAdd(count);
+        
     }
 
   return (

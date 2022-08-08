@@ -4,7 +4,7 @@ import { useCartContext } from '../CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({prod}) => {
-    const{applyCart, cartList}= useCartContext()  ;
+    const{applyCart, cartList}= useCartContext([])  ;
     const[toCart, setToCart] = useState(true);
     const onAdd = (count)=>{
         // console.log(`La cantidad es ${count}`);
@@ -20,6 +20,7 @@ const ItemDetail = ({prod}) => {
             </div>
             <div className="card__body">
                 <h3>{prod.name}</h3>
+                <h4>{prod.price}</h4>
                 <p>{prod.description}</p> 
             </div>
 

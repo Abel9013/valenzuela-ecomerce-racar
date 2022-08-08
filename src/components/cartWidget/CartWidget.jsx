@@ -3,7 +3,7 @@ import carrito from '../../imagenes/bx-cart.svg' ;
 const CartWidget = () => {
   return (
     <>
-     <img src={carrito} alt="carrito" />    
+      <img src={carrito} alt="carrito" />    
     </>
   )
 }

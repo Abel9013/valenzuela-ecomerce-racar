@@ -23,12 +23,24 @@ const CartContextProvider = ({children}) => {
     const emptyCart = () => {
       setCartList([]);
     }
+    const deleteItem = (id)=>{
+      setCartList(cartList.filter((prod) => prod.id !== id));
 
+    }
+    const total = () => {
+      return cartList.reduce((counter, prod) => counter = counter + (prod.price * prod.quantity),0)
+    }
+    // const prodCart = ()=>{
+    //   return cartList.length;
+    // }
   return (
     <CartContext.Provider value ={{
       emptyCart,
       cartList,
-      applyCart
+      applyCart,
+      deleteItem,
+      total
+      // prodCart
     }} >
         {children}
     </CartContext.Provider>

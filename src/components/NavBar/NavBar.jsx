@@ -1,7 +1,9 @@
 import CartWidget from "../cartWidget/CartWidget";
 import { Link } from 'react-router-dom'
+// import { useCartContext } from "../CartContext/CartContext";
+import NumberCart from "./NumberCart";
 const NavBar = () => {
-    // console.log('es es es este');
+    console.log(NumberCart);
   return (
     <>
       <header className="header">
@@ -25,9 +27,9 @@ const NavBar = () => {
                     <a href="##" className="header__link">
                         Contancto
                     </a>
-                    <Link to="/cart" >
+                    <Link to="/cart" > {NumberCart}
                     <a href="##" className="header__link carrito">
-                        <CartWidget />
+                     <CartWidget /> 
                     </a>
                     </Link>
                 </div>
