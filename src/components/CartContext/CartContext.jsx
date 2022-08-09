@@ -10,25 +10,28 @@ const CartContextProvider = ({children}) => {
     const applyCart = (prod)=>{
       const index = cartList.findIndex((prod) => prod.id === prod.id);
       if(index !== -1){
-        const oldqty = cartList[index].quantity;
-        const newCart = cartList.filter(item => item.id !== prod.id)
-        prod.quantity += oldqty; 
-        setCartList([...newCart, prod]);
+        let qty = cartList[index].quantity;  
+        cartList[index].quantity = qty + prod.quantity;
+        setCartList([...cartList]);
+
       }else{
         setCartList([...cartList, prod])
-
+        console.log('aca estoy');
       }
       // console.log(index);
     }
     const emptyCart = () => {
       setCartList([]);
     }
-    const deleteItem = (id)=>{
-      setCartList(cartList.filter((prod) => prod.id !== id));
+    // const deleteItem = (id)=>{
+    //   setCartList(cartList.filter((prod) => prod.id !== id));
 
+    // }
+    const qtyTotal = ()=>{
+      return cartList.reduce((contador, prod) => contador += prod.quantity, 0 );
     }
     const total = () => {
-      return cartList.reduce((counter, prod) => counter = counter + (prod.price * prod.quantity),0)
+      return cartList.reduce((counter, prod) => counter = counter + (prod.price * prod.quantity), 0 )
     }
     // const prodCart = ()=>{
     //   return cartList.length;
@@ -38,8 +41,9 @@ const CartContextProvider = ({children}) => {
       emptyCart,
       cartList,
       applyCart,
-      deleteItem,
-      total
+      // deleteItem,
+      total,
+      qtyTotal,
       // prodCart
     }} >
         {children}
