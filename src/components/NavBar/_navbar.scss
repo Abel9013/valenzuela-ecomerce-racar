@@ -2,6 +2,10 @@
 @use '../../scss/base/mixins' as m;
 
 .header {
+    // cursor: ;
+    &:hover{
+        cursor: pointer;
+    }
     background-color: v.$primario;
     color: white;
     &__navegacion{
@@ -16,9 +20,6 @@
             flex-direction: row;
             
         }
-        // .carrito {
-        //     order: -1;
-        // }
         a {
             color: white;
             padding: 3rem;

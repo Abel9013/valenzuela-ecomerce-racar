@@ -10,29 +10,25 @@ const NavBar = () => {
       <header className="header">
             <div className="header__barra">
                 <div className="header__navegacion">
-                        <a href="##" className="header__link">
-                    <Link to='/' >
+                    
+                    <Link className="header__link" to='/' >
                             Inicio
                     </Link>
-                        </a>
-                    <a href="##" className="header__link">
-                    <Link to="/category/analogical" >
+            
+                    <Link className="header__link" to="/category/analogical" >
                         Analogicos   
                     </Link>
-                    </a>
-                    <a href="##" className="header__link">
-                        <Link to="/category/digital" className="header__link">
-                        Digitales
-                        </Link>
-                    </a>
-                    <a href="##" className="header__link">
-                        Contancto
-                    </a>
-                    <Link to="/cart" > 
-                    <a href="##" className="header__link carrito">
-                     { qtyTotal ()}
-                     <CartWidget /> 
-                    </a>
+                    
+                    <Link className="header__link" to="/category/digital" >
+                         Digitales
+                    </Link>
+                    <Link className="header__link" to="/category/analogical" >
+                        Contancto   
+                    </Link>
+                    <Link className="header__link carrito" to="/cart" > 
+                        { qtyTotal () !== 0 && qtyTotal ()}
+                        <CartWidget /> 
+            
                     </Link>
                 </div>
 
@@ -44,32 +40,3 @@ const NavBar = () => {
 
 export default NavBar;
 
-
-// <header className="header">
-// <div className="header__barra">
-//     <div className="header__navegacion">
-//             <a href="##" className="header__link">
-//         <Link to='/' >
-//                 Inicio
-//         </Link>
-//             </a>
-//         <a href="##" className="header__link">
-//         <Link to="/category/analogical" >
-//             Analogicos   
-//         </Link>
-//         </a>
-//         <a href="##" className="header__link">
-//             <Link to="/category/digital" >
-//             Digitales
-//             </Link>
-//         </a>
-//         <a href="##" className="header__link">
-//             Contancto
-//         </a>
-//         <a href="##" className="header__link carrito">
-//             <CartWidget />
-//         </a>
-//     </div>
-
-// </div> 
-// </header>
