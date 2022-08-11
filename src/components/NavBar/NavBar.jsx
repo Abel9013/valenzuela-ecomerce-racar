@@ -9,8 +9,7 @@ const NavBar = () => {
     <>
       <header className="header">
             <div className="header__barra">
-                <div className="header__navegacion">
-                    
+                <div className="header__navegacion">   
                     <Link className="header__link" to='/' >
                             Inicio
                     </Link>

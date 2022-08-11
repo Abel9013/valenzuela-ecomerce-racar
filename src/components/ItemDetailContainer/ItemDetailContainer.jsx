@@ -2,22 +2,33 @@ import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { listArray } from '../helpers/listArray';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+
 
 const ItemDetailContainer = () => {
     const [prod, setProd] = useState({})
-    const [loading, setLoading] = useState(false)
-   const {id} = useParams()
-    useEffect(()=>{
-        setLoading(true);
-        listArray(id)
-        .then((res) => {
-            setProd(res)
-        })
-        .catch((rej) =>  console.log(rej))
-        .finally(()=>{
-            setLoading(false)
-        })
+    const [loading, setLoading] = useState(true)
+    const {id} = useParams()
+
+    useEffect(()=>{      
+        const db = getFirestore()
+        const queryCollection = doc(db, 'productos', id)
+        getDoc(queryCollection)
+          .then(res => setProd( {id: res.id, ...res.data() } ))
+          .catch(err => console.log(err) )
+          .finally(()=> setLoading(false) )
     },[prod])
+    console.log(prod)
+    // useEffect(()=>{
+    //     listArray(id)
+    //     .then((res) => {
+    //         setProd(res)
+    //     })
+    //     .catch((rej) =>  console.log(rej))
+    //     .finally(()=>{
+    //         setLoading(false)
+    //     })
+    // },[prod])
   return (
     <>
     {
@@ -34,3 +45,11 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer
+// traer uno
+// useEffect (( )=>{
+//   const db = getFirestore()
+//   const queryCollection = doc(db, 'productos', 'id')
+//   getDoc(queryCollection)
+//     .then(res => setProd( {id: res.id, ...res.data() } ))
+// },[])
+//   console.log(prod);
