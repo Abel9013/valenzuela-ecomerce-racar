@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
           .catch(err => console.log(err) )
           .finally(()=> setLoading(false) )
     },[prod])
-    console.log(prod)
+    // console.log(prod)
     // useEffect(()=>{
     //     listArray(id)
     //     .then((res) => {

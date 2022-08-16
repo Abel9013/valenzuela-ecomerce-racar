@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   const {categoryId} = useParams()
     
   useEffect(()=>{
-    console.log(categoryId)
+    // console.log(categoryId)
     if(categoryId){
         const db = getFirestore()
         const queryCollection = collection(db, 'productos')
