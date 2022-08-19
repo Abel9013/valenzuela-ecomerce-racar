@@ -30,6 +30,8 @@ const Cart = () => {
     addDoc(queryOrders, order)
       // .then(resp => console.log(resp.id))
       .then(resp => setTicket(resp.id))
+      .catch(err => console.log(err) )
+      .finally(() => emptyCart())
   } 
 
   return (
