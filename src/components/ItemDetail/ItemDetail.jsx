@@ -10,7 +10,6 @@ const ItemDetail = ({prod}) => {
         applyCart({...prod, quantity: count});
         setToCart(false)
     }
-    // console.log(cartList);
   return (
     <>
         <div className="card">

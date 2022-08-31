@@ -11,7 +11,6 @@ const ItemListContainer = () => {
   const {categoryId} = useParams()
     
   useEffect(()=>{
-    // console.log(categoryId)
     if(categoryId){
         const db = getFirestore()
         const queryCollection = collection(db, 'productos')
@@ -33,13 +32,11 @@ const ItemListContainer = () => {
         .finally(()=> setLoading(false) )
       }
   },[categoryId])
-//  console.log(items);
   return (
     <>
         {
-            loading ? //Si es true muestra spiner de carga
+            loading ? 
               <h3>Cargandooo</h3>   
-              // <span class="loader"></span>
                     : 
             <ItemList items = {items} />
         }
